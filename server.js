@@ -35,8 +35,6 @@ app.use(cors())
 app.use(cookieparser())
 app.use("/uploads", express.static("uploads"))
 
-app.enable("trust proxy")
-
 //routes
 app.post("/api/upload", upload.single("image"), (req, res) => {
 	res.json({
