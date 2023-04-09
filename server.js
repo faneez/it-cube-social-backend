@@ -52,7 +52,10 @@ app.use("/api", postRouter)
 app.use("/api", groupPostRouter)
 app.use("/api", messageRouter)
 
-app.post("/refresh_token", authCntrl.generateAccessToken)
+app.post(
+	"https://it-cube-social-backend-production.up.railway.app/refresh_token",
+	authCntrl.generateAccessToken
+)
 const port = process.env.PORT || 5000
 
 const URL = production ? process.env.DB_URL_PROD : process.env.DB_URL
