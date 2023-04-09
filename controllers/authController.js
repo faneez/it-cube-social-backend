@@ -35,6 +35,8 @@ const authCntrl = {
 
 			res.cookie("refreshtoken", refresh_token, {
 				httpOnly: true,
+				secure: true,
+				sameSite: "none",
 				path: "/api/refresh_token",
 				maxAge: 24 * 30 * 60 * 60 * 1000, //30d
 			})
@@ -73,6 +75,8 @@ const authCntrl = {
 
 			res.cookie("refreshtoken", refresh_token, {
 				httpOnly: true,
+				secure: true,
+				sameSite: "none",
 				path: "/api/refresh_token",
 				maxAge: 24 * 30 * 60 * 60 * 1000, //30d
 			})
