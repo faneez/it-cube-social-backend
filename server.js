@@ -64,7 +64,7 @@ const io = new Server(server, {
 	cors: {
 		origin: [
 			"http://localhost:3000",
-			"https://it-cube-social-backend-production.up.railway.app",
+			"https://heroic-hotteok-254a9e.netlify.app",
 		],
 		credentials: true,
 	},
