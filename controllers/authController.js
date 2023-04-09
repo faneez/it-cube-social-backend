@@ -34,11 +34,6 @@ const authCntrl = {
 			const refresh_token = createRefreshToken(newUser._id, newUser.roles)
 
 			res.cookie("refreshtoken", refresh_token, {
-				httpOnly: true,
-				secure: true,
-				sameSite: "none",
-
-				path: "/api/refresh_token",
 				maxAge: 24 * 30 * 60 * 60 * 1000, //30d
 			})
 			return res.json({
@@ -75,11 +70,6 @@ const authCntrl = {
 			const refresh_token = createRefreshToken(user._id, user.roles)
 
 			res.cookie("refreshtoken", refresh_token, {
-				httpOnly: true,
-
-				secure: true,
-				sameSite: "none",
-				path: "/api/refresh_token",
 				maxAge: 24 * 30 * 60 * 60 * 1000, //30d
 			})
 			return res.json({
