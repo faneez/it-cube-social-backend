@@ -36,7 +36,7 @@ const authCntrl = {
 			res.cookie("refreshtoken", refresh_token, {
 				httpOnly: true,
 				secure: true,
-				path: "https://it-cube-social-backend-production.up.railway.app/refresh_token",
+				path: "/api/refresh_token",
 				maxAge: 24 * 30 * 60 * 60 * 1000, //30d
 			})
 			return res.json({
@@ -75,7 +75,7 @@ const authCntrl = {
 			res.cookie("refreshtoken", refresh_token, {
 				httpOnly: true,
 				secure: true,
-				path: "https://it-cube-social-backend-production.up.railway.app/refresh_token",
+				path: "/api/refresh_token",
 				maxAge: 24 * 30 * 60 * 60 * 1000, //30d
 			})
 			return res.json({
@@ -92,9 +92,7 @@ const authCntrl = {
 	},
 	logout: async (req, res) => {
 		try {
-			res.clearCookie("refreshtoken", {
-				path: "https://it-cube-social-backend-production.up.railway.app/refresh_token",
-			})
+			res.clearCookie("refreshtoken", { path: "/api/refresh_token" })
 			res.json({ msg: "Выполнен выход" })
 		} catch (err) {
 			return res.status(500).json({ msg: err.message })
