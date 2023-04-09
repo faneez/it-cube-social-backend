@@ -64,7 +64,7 @@ const io = new Server(server, {
 	cors: {
 		origin: [
 			"http://localhost:3000",
-			"it-cube-social-backend-production.up.railway.app",
+			"https://it-cube-social-backend-production.up.railway.app",
 		],
 		credentials: true,
 	},
